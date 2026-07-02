@@ -1,31 +1,16 @@
-# AUREON — Premium React Web
+# AUREON Premium Web — GitHub Pages ready
 
-Samostatný React/Vite projekt postavený na dodaných efektoch:
+Toto je statická verzia webu pripravená pre GitHub Pages.
 
-- ElectricBorder
-- AnimatedContent + GSAP ScrollTrigger
-- ScrollVelocity
-- ShapeBlur + Three.js
-- ShinyText
-- LogoLoop
-- TargetCursor
-- MetallicPaint
+## Ako nahrať na GitHub Pages
 
-## Spustenie lokálne
+1. Rozbaľ ZIP.
+2. Nahraj obsah priečinka priamo do repozitára, nie celý priečinok ako podpriečinok.
+3. V GitHube otvor Settings → Pages.
+4. Source nastav na Deploy from a branch.
+5. Branch nastav na main a folder na /root.
+6. Ulož.
 
-```bash
-npm install
-npm run dev
-```
+Dôležité: v koreňovom priečinku repozitára musí byť `index.html`, priečinok `assets`, `favicon.svg` a `.nojekyll`.
 
-## Build
-
-```bash
-npm run build
-```
-
-Výstup pre statický hosting je v priečinku `dist/`.
-
-## Poznámka
-
-Efekty sú použité cielene. Web nemá byť cirkus efektov, ale prémiová ukážka s jasnou štruktúrou: hero, dôkaz, služby, proces, balíky a CTA.
+Táto verzia nepotrebuje npm, Vite ani build príkazy. Je už buildnutá.
