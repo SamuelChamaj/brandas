@@ -1,0 +1,69 @@
+.logoloop {
+  --logoloop-gap: 34px;
+  --logoloop-logoHeight: 28px;
+  --logoloop-fadeColor: #070812;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+
+.logoloop__track {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.logoloop__list {
+  display: flex;
+  align-items: center;
+  gap: var(--logoloop-gap);
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 var(--logoloop-gap) 0 0;
+  list-style: none;
+}
+
+.logoloop__item {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.logoloop__node,
+.logoloop__link {
+  min-height: var(--logoloop-logoHeight);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.46);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,.035);
+  text-decoration: none;
+  transition: transform .2s ease, color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.logoloop--scale-hover .logoloop__item:hover .logoloop__node,
+.logoloop--scale-hover .logoloop__item:hover .logoloop__link {
+  transform: translateY(-2px) scale(1.04);
+  color: rgba(255,255,255,.86);
+  border-color: rgba(151,115,255,.5);
+  background: rgba(124,61,255,.11);
+}
+
+.logoloop--vertical {
+  height: 100%;
+  width: auto;
+}
+
+.logoloop--vertical .logoloop__track,
+.logoloop--vertical .logoloop__list {
+  flex-direction: column;
+}
