@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clippio Web Finder</title>
+  <meta name="description" content="Clippio Web Finder – krátky interaktívny výber, ktorý odporučí najvhodnejší typ webu podľa cieľa, rozpočtu a funkcií." />
+  <meta name="theme-color" content="#0a0e1a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clippio Web Finder" />
+  <meta property="og:description" content="Krátky interaktívny výber, ktorý odporučí najvhodnejší typ webu podľa cieľa, rozpočtu a funkcií." />
+  <meta property="og:site_name" content="Clippio" />
+  <meta property="og:locale" content="sk_SK" />
+
+  <link rel="preconnect" href="https://clippio.sk" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Clippio – domov">
+        <span class="brand-mark">C.</span>
+        <span class="brand-name">Clippio</span>
+      </a>
+      <nav class="main-nav" aria-label="Hlavná navigácia">
+        <a href="#finder">Web finder</a>
+        <a href="#moznosti">Možnosti</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="pill">bez registrácie · 60 sekúnd</span>
+          <h1 id="hero-title">Zisti, aký web má pre teba reálny zmysel.</h1>
+          <p class="hero-lead">
+            Nie každý potrebuje veľký web. Tento krátky výber ti odporučí
+            najvhodnejší smer podľa cieľa, rozpočtu a toho, čo má web robiť.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#finder">Spustiť výber</a>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="Odporúčanie">
+          <span class="card-label">Odporúčanie</span>
+          <h2 class="card-heading">Štart / Rast / Predaj</h2>
+          <p class="card-text">
+            Výsledok nedáva len názov balíka. Ukáže aj dôvod, kedy sa oplatí
+            a kedy by si zbytočne pálil peniaze.
+          </p>
+          <ul class="focus-words">
+            <li>Cieľ</li>
+            <li>Rozpočet</li>
+            <li>Funkcie</li>
+            <li>Výsledok</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ FEATURE STRIP ============ -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Firemný web</span><span>Landing page</span><span>SEO základ</span>
+        <span>Kontaktný formulár</span><span>Ukážkový web</span><span>Mini e-shop</span>
+        <span>Portfólio</span><span>Predajný funnel</span>
+        <!-- duplicate for seamless loop -->
+        <span>Firemný web</span><span>Landing page</span><span>SEO základ</span>
+        <span>Kontaktný formulár</span><span>Ukážkový web</span><span>Mini e-shop</span>
+        <span>Portfólio</span><span>Predajný funnel</span>
+      </div>
+    </section>
+
+    <!-- ============ WEB FINDER ============ -->
+    <section class="finder" id="finder" aria-labelledby="finder-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Výber webu</span>
+          <h2 id="finder-title">Odpovedz na 4 veci. Dostaneš jeden najlepší smer.</h2>
+          <p>
+            Keď je výsledok neistý, stránka ti ukáže dilemu. Nie je cieľ predať
+            najdrahší web, ale nevyrobiť zbytočnosť.
+          </p>
+        </div>
+
+        <div class="finder-grid">
+
+          <!-- Stepper -->
+          <div class="stepper-wrap reveal">
+            <div class="stepper" id="stepper" role="group" aria-label="Interaktívny výber webu">
+
+              <div class="step-progress" aria-hidden="true">
+                <span class="dot" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+              </div>
+
+              <!-- Steps injected / toggled here -->
+              <div class="steps" id="steps"></div>
+
+              <!-- Result -->
+              <div class="result" id="result" hidden>
+                <span class="eyebrow">Výsledok</span>
+                <h3 class="result-title" id="result-title"></h3>
+                <p class="result-summary" id="result-summary"></p>
+                <div class="result-box">
+                  <div class="result-col">
+                    <span class="result-col-label">Prečo práve toto</span>
+                    <p id="result-reason"></p>
+                  </div>
+                  <div class="result-col">
+                    <span class="result-col-label">Kedy to nebrať</span>
+                    <p id="result-warning"></p>
+                  </div>
+                </div>
+                <div class="result-actions">
+                  <a class="btn btn-primary" id="result-mail"
+                     href="mailto:info@clippio.sk?subject=Clippio%20Web%20Finder%20-%20m%C3%B4j%20v%C3%BDsledok">
+                    Poslať výsledok Clippiu
+                  </a>
+                  <button class="btn btn-ghost" id="reset-btn" type="button">Spustiť znova</button>
+                </div>
+              </div>
+
+              <!-- Nav controls -->
+              <div class="step-controls" id="step-controls">
+                <button class="btn btn-ghost" id="back-btn" type="button" disabled>Späť</button>
+                <button class="btn btn-primary" id="next-btn" type="button" disabled>Ďalej</button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Advisor card -->
+          <aside class="advisor reveal" aria-label="Tvrdá pravda">
+            <span class="card-label warn">Tvrdá pravda</span>
+            <h3>Najlacnejší web nie je vždy najvýhodnejší.</h3>
+            <p>
+              Ak máš len základnú ponuku, stačí Štart. Ak chceš dopyty, potrebuješ
+              Rast. Ak chceš predávať, lacná vizitka je falošná úspora.
+            </p>
+            <ul class="advisor-list">
+              <li>Štart = dôvera a základná prítomnosť.</li>
+              <li>Rast = lepší obchodný výkon.</li>
+              <li>Predaj = funkcionalita a konverzie.</li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POSSIBILITIES ============ -->
+    <section class="moznosti" id="moznosti" aria-labelledby="moznosti-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Možnosti webu</span>
+          <h2 id="moznosti-title">Čo vie web pokryť</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <span class="card-tag">Štart</span>
+            <h3>Firemná vizitka</h3>
+            <p>Základné sekcie, kontakt, služby a dôveryhodný prvý dojem.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-tag">Rast</span>
+            <h3>Dopytový web</h3>
+            <p>Lepšie texty, CTA, portfólio a štruktúra pre získavanie klientov.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-tag">Predaj</span>
+            <h3>Web, ktorý má obchodný cieľ</h3>
+            <p>Predajná logika, formuláre, objednávky, košík alebo iné funkcie podľa potreby.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-tag">Demo</span>
+            <h3>Ukážkový web</h3>
+            <p>Vhodné, keď chceš klientom ukázať funkcie, efekty, balíky alebo konkrétny proces.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-tag">SEO</span>
+            <h3>Vyhľadateľnosť</h3>
+            <p>Meta popisy, sitemap, robots, OG náhľady a čistá štruktúra.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-tag">Formuláre</span>
+            <h3>Dopyty</h3>
+            <p>Kontakt, cenová ponuka, rezervácia alebo jednoduchý konfigurátor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="kontakt" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2 id="kontakt-title">Máš výsledok? Pošli ho a rieš konkrétnu ponuku.</h2>
+          <p>
+            Najväčšia chyba je riešiť efekty skôr ako cieľ webu. Efekty majú
+            predávať myšlienku, nie zakrývať slabú ponuku.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:info@clippio.sk?subject=Chcem%20web%20od%20Clippio">info@clippio.sk</a>
+            <a class="btn btn-ghost" href="https://clippio.sk" target="_blank" rel="noopener">clippio.sk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <span class="brand-mark">C.</span>
+        <span class="brand-name">Clippio</span>
+      </div>
+      <p class="footer-note">Weby, ktoré majú obchodný zmysel. © <span id="year"></span> Clippio</p>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+</body>
+</html>
