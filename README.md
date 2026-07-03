@@ -1,18 +1,18 @@
-# Stepper Mini Web — GitHub Pages verzia
+# Clippio Web Finder
 
-Toto je statická verzia. Funguje priamo na GitHub Pages bez npm, bez Vite buildu a bez inštalácie balíkov.
+Statická GitHub Pages verzia. Nevyžaduje npm, Vite ani build.
 
-## Ako nahrať
+## Použitie
 
-Nahraj obsah tohto priečinka do rootu repozitára:
+1. Nahraj obsah tohto priečinka do rootu GitHub repozitára.
+2. V GitHube zapni `Settings → Pages → Deploy from a branch → main → /root`.
+3. Otvor URL z GitHub Pages.
+
+## Súbory
 
 - `index.html`
-- `assets/style.css`
+- `assets/styles.css`
 - `assets/app.js`
 - `.nojekyll`
 
-Potom v GitHub repozitári nastav:
-
-Settings → Pages → Deploy from a branch → main → /root
-
-Dôležité: nepoužívať pôvodnú React/Vite source verziu, ak nerobíš build.
+Efekty sú preložené do vanilla HTML/CSS/JS, aby stránka fungovala priamo na GitHub Pages bez build procesu.
