@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ľahká statická stránka so stepper animáciou pripravená pre GitHub Pages." />
+    <meta property="og:title" content="Stepper Mini Web" />
+    <meta property="og:description" content="Jednoduchý trojkrokový výber s animáciami, bez buildu a bez backendu." />
+    <meta property="og:type" content="website" />
+    <title>Stepper Mini Web</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235227ff'/%3E%3Cpath d='M18 34l9 9 20-23' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Mini web demo</p>
+          <h1 id="hero-title">Ľahká stránka so stepperom</h1>
+          <p class="hero-text">
+            Jednoduchá ukážka animovaného procesu. Funguje priamo na GitHub Pages bez npm, bez buildu a bez backendu.
+          </p>
+          <div class="hero-actions">
+            <a href="#demo" class="primary-link">Pozrieť demo</a>
+            <span class="meta-text">Static HTML · CSS · JS</span>
+          </div>
+        </div>
+
+        <aside class="stats-card" aria-label="Stručné výhody">
+          <div>
+            <strong>3</strong>
+            <span>kroky</span>
+          </div>
+          <div>
+            <strong>0</strong>
+            <span>build proces</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>čistý flow</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="section-heading">
+          <p class="eyebrow">Použitý princíp</p>
+          <h2 id="demo-title">Výber projektu v troch krokoch</h2>
+        </div>
+
+        <div class="stepper-shell" data-stepper>
+          <div class="step-indicator-row" aria-label="Kroky procesu">
+            <button class="step-indicator active" type="button" data-step-indicator="1" aria-label="Prejsť na krok 1">
+              <span class="step-indicator-inner"><span class="active-dot"></span></span>
+            </button>
+            <span class="step-connector"><span class="step-connector-inner"></span></span>
+            <button class="step-indicator" type="button" data-step-indicator="2" aria-label="Prejsť na krok 2">
+              <span class="step-indicator-inner"><span class="step-number">2</span></span>
+            </button>
+            <span class="step-connector"><span class="step-connector-inner"></span></span>
+            <button class="step-indicator" type="button" data-step-indicator="3" aria-label="Prejsť na krok 3">
+              <span class="step-indicator-inner"><span class="step-number">3</span></span>
+            </button>
+          </div>
+
+          <div class="step-content-window" aria-live="polite">
+            <article class="step-panel active" data-step="1">
+              <span class="step-kicker">Krok 1</span>
+              <h3>Čo chceš vytvoriť?</h3>
+              <p>Vyber typ stránky. V reálnom webe by sa toto dalo napojiť na formulár alebo dopyt.</p>
+              <div class="choice-grid" role="radiogroup" aria-label="Typ projektu">
+                <button class="choice-button selected" type="button" data-choice="Jednoduchý firemný web">Jednoduchý firemný web</button>
+                <button class="choice-button" type="button" data-choice="Landing page na získavanie dopytov">Landing page na dopyty</button>
+                <button class="choice-button" type="button" data-choice="Ukážkový web s funkciami">Ukážkový web s funkciami</button>
+              </div>
+            </article>
+
+            <article class="step-panel" data-step="2">
+              <span class="step-kicker">Krok 2</span>
+              <h3>Vybraný smer</h3>
+              <p class="selected-line" data-selected-line>Jednoduchý firemný web</p>
+              <p>
+                Stepper má zmysel tam, kde nechceš klienta zahltiť celým formulárom naraz. Rozseká rozhodovanie na malé časti.
+              </p>
+            </article>
+
+            <article class="step-panel" data-step="3">
+              <span class="step-kicker">Krok 3</span>
+              <h3>Hotovo</h3>
+              <p>
+                Tento základ môžeš použiť ako onboarding, konfigurátor služby alebo jednoduchý predajný flow na webe.
+              </p>
+              <div class="summary-box">
+                <span>Výstup</span>
+                <strong data-summary-output>Jednoduchý firemný web</strong>
+              </div>
+            </article>
+
+            <article class="complete-panel" data-complete>
+              <span class="step-kicker">Dokončené</span>
+              <h3>Dopyt je pripravený</h3>
+              <p>Vybraný typ: <strong data-complete-output>Jednoduchý firemný web</strong></p>
+              <button type="button" class="primary-link reset-button" data-reset>Spustiť znova</button>
+            </article>
+          </div>
+
+          <div class="footer-container" data-footer>
+            <div class="footer-nav end" data-footer-nav>
+              <button class="back-button" type="button" data-back>Späť</button>
+              <button class="next-button" type="button" data-next>Ďalej</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
